@@ -24,10 +24,12 @@
       &:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
       }
+
       // Line 2 - Hide
       &:nth-child(2) {
         opacity: 0;
       }
+
       // Line 3 - Rotate
       &:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
@@ -77,7 +79,8 @@
   // Branding Side
   &-branding {
     background: $primary-colour;
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
 
     &.show {
       // Slide in from bottom
@@ -126,7 +129,7 @@
 
 // Delay each nav item slide by 0.1s
 @for $x from 1 through 4 {
-  .nav-item:nthchild(#{$x}) {
+  .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
   }
 }

@@ -48,7 +48,8 @@
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     background: #444;
-    transform: translate3d(0, -100%, 0); }
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
@@ -77,16 +78,16 @@
     .menu .nav-link:hover {
       color: #eece1a; }
 
-.nav-item:nthchild(1) {
+.nav-item:nth-child(1) {
   transition-delay: 0.1s; }
 
-.nav-item:nthchild(2) {
+.nav-item:nth-child(2) {
   transition-delay: 0.2s; }
 
-.nav-item:nthchild(3) {
+.nav-item:nth-child(3) {
   transition-delay: 0.3s; }
 
-.nav-item:nthchild(4) {
+.nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
 * {
@@ -179,55 +180,61 @@ main {
     background: #515151;
     padding: 0.5rem;
     border-bottom: #eece1a 5px solid; }
-  .about-info .projects {
-    display: grid;
-    grid-gap: 0.7rem;
-    grid-template-columns: repeat(3, 1fr); }
-    .about-info .projects img {
-      width: 100%;
-      border: 3px #fff solid; }
-      .about-info .projects img:hover {
-        opacity: 0.5;
-        border-color: #eece1a;
-        transition: all 0.5s ease-out; }
-  .about-info .boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem; }
-    .about-info .boxes div {
-      font-size: 2rem;
-      border: 3px #fff solid;
-      padding: 1.5rem 2.5rem;
-      margin-bottom: 3rem;
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #eece1a;
       transition: all 0.5s ease-out; }
-      .about-info .boxes div:hover {
-        padding: 0.5rem 1.5rem;
-        background: #eece1a;
-        color: #000; }
-        .about-info .boxes div:hover span {
-          color: #000; }
-  .about-info .btn, .about-info .btn-dark, .about-info .btn-light {
-    display: block;
-    padding: 0.5rem 1rem;
-    border: 0;
-    margin-bottom: 0.3rem; }
-    .about-info .btn:hover, .about-info .btn-dark:hover, .about-info .btn-light:hover {
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
       background: #eece1a;
       color: #000; }
-  .about-info .btn-dark {
-    background: black;
-    color: #fff; }
-  .about-info .btn-light {
-    background: #c4c4c4;
-    color: #333; }
-  .about-info #main-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #2b2b2b;
-    color: #fff;
-    height: 60px; }
+      .boxes div:hover span {
+        color: #000; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+  height: 60px; }
 
 @media screen and (min-width: 1171px) {
   .projects {
@@ -270,7 +277,12 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; }
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem;
+      font-size: 5rem; }
   .projects {
     grid-template-columns: 1fr; } }
